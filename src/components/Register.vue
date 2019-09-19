@@ -11,6 +11,14 @@
       <label for="pwd">Password</label>
       <input type="password" icons=" "   class="form-control" v-model="pwd" />
     </div>
+    <div class="form-group">
+      <label for="pwd">Age</label>
+      <input type="password" icons=" "   class="form-control" v-model="pwd" />
+    </div>
+    <div class="form-group">
+      <label for="pwd">Place</label>
+      <input type="password" icons=" "   class="form-control" v-model="pwd" />
+    </div>
     <div class="checkbox">
       <label>
         <input type="checkbox" />Remember me

@@ -1,22 +1,24 @@
 <template>   
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <myheader></myheader>
+    <SampleHeader />
+    <Form></Form>
+    <Appbody></Appbody>
+    <Login></Login>
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import HelloWorld from './components/HelloWorld.vue'
+import SampleHeader from './components/frame/Header.vue'
+// import Form from './components/Form.vue'
+import Appbody from '.components/frame/Body.vue'
+// import Login from './modules/Login.vue'
 export default {
   name: 'app',
   components: {
-    HelloWorld,
-    Header
-
-
-
+   SampleHeader,
+  //  Form,
+  Appbody
+  // Login
   }
 }
 </script>

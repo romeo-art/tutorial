@@ -1,7 +1,9 @@
 <template>
   <div class="hello"><br>
   <div class="form"> 
-    <div class="form-group"><br>
+    <div class="form-group">
+      <h4> Login Form</h4>
+      <br>
       <label for="email">Email Address</label>
       <input type="email" icons="fas fa-envelope-open"  class="form-control" id="email" />
     </div>
@@ -14,25 +16,34 @@
         <input type="checkbox" />Remember me
       </label>
     </div>
-    <button type="submit" class="btn btn-default"> Submit</button>
+    <button type="submit" class="btn btn-default" v-on:click="alert" > Submit</button>
   </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  }
- 
-};
+ data (){
+   return{
+
+   }
+ },
+ method : {
+   alert(){
+     this.$swal({
+       title:'Login Form',
+       input:'text',
+       inputplaceholdername:'enter your name? ',
+       showCloseButton:true,
+
+     });
+   }
+ }
+}
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style scoped>
-h3 {
+ <style scoped>
+  h3 {
   margin: 40px 0 0;
 }
 
@@ -47,7 +58,7 @@ button{
 }
 .form{
   border: 3px solid red;
-  height: 300px;
+  height: 350px;
   width:250px;
   border-radius: 6px;
   margin-left: 670px;
