@@ -10,26 +10,29 @@
 					<span><i class="fab fa-twitter-square"></i></span>
 				</div>
 			</div>
+			<ul>
+      		<li v-for="error in errors">{{ error }}</li>
+    		</ul>
 			<div class="card-body">
-				<form>
+				<form id="app" @submit="checkForm" action="/something" method="post" >
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="username"  v-model="email" required>
 						
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="password" v-model="password" required>
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Login" class="btn float-right login_btn" @click="signup()">
+						<button type="submit"  class="btn float-right login_btn" @click="sigin()">Submit</button>
 					</div>
 				</form>
 			</div>
@@ -135,16 +138,19 @@ margin-left: 4px;
 }
 </style>
 <script>
-
 export default {
-  name: 'login',
-  data() {
+  name: 'Login',
+  data () {
     return {
-      email: " ",
-      pwd: " "
-    };
+      email: '',
+      password: ''
+    }
   },
   methods: {
+    login () {
+      console.log(this.email),
+      console.log(this.password)
+    }
   }
 };
 </script>

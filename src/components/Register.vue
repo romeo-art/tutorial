@@ -11,36 +11,36 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form>
+				<form @submit.prevent="register">
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="text" class="form-control" placeholder="username">
+						<input type="text" class="form-control" placeholder="username" v-model="username" required>
 					</div>
 					<div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-key"></i></span>
 						</div>
-						<input type="password" class="form-control" placeholder="password">
+						<input type="password" class="form-control" placeholder="password" v-model="password" required>
           </div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="date" class="form-control" placeholder="birthdate">
+						<input type="date" class="form-control" placeholder="birthdate" v-model="birthdate" required>
           </div>
           <div class="input-group form-group">
 						<div class="input-group-prepend">
 							<span class="input-group-text"><i class="fas fa-user"></i></span>
 						</div>
-						<input type="number" class="form-control" placeholder="age">
+						<input type="number" class="form-control" placeholder="age"  v-model="age" required>
 					</div>
 					<div class="row align-items-center remember">
 						<input type="checkbox">Remember Me
 					</div>
 					<div class="form-group">
-						<input type="submit" value="Submit" class="btn float-right login_btn">
+						<input type="submit" value="Submit" class="btn float-right login_btn"  @click="signup()">
 					</div>
 				</form>
 			</div>
@@ -152,10 +152,18 @@ export default {
   data() {
     return {
       email: " ",
-      pwd: " "
+      password: " ",
+	  birthdate:" ",
+	  age:" "
     };
   },
   methods: {
+	  register :function() {
+		  console.log(this.email),
+		  console.log(this.password),
+		  console.log(this.birthdate),
+		  console.log(this.age)
+	  }
   }
 };
 </script>
