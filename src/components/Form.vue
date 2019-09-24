@@ -32,10 +32,6 @@ export default {
     };
   },
   methods: {
-    login: function() {
-      console.log("Username: " + this.email + "\nPassword: " + this.pwd);
-      alert("Username: " + this.email + "\nPassword: " + this.pwd);
-    }
   }
 };
 </script>
